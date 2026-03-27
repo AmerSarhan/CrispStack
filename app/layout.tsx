@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
+import { JsonLd } from "@/components/seo/json-ld"
+import { createMetadata } from "@/lib/seo"
 import "./globals.css"
 
 const inter = Inter({
@@ -8,10 +10,7 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-export const metadata: Metadata = {
-  title: "CrispStack",
-  description: "The anti-vibe-coded Next.js starter.",
-}
+export const metadata: Metadata = createMetadata()
 
 export default function RootLayout({
   children,
@@ -27,6 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <JsonLd />
           {children}
         </ThemeProvider>
       </body>
