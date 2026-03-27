@@ -4,8 +4,9 @@ import Link from "next/link"
 import { useState } from "react"
 import { Logo } from "./logo"
 import { ThemeToggle } from "./theme-toggle"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { cn } from "@/lib/utils"
 
 function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -44,17 +45,18 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="/sign-in">Get Started</Link>
-          </Button>
+          <Link
+            href="/sign-in"
+            className={cn(buttonVariants({ size: "sm" }), "hidden sm:inline-flex")}
+          >
+            Get Started
+          </Link>
 
           {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <MenuIcon />
-                <span className="sr-only">Menu</span>
-              </Button>
+            <SheetTrigger className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-sm font-medium transition-colors hover:bg-muted hover:text-foreground outline-none md:hidden">
+              <MenuIcon />
+              <span className="sr-only">Menu</span>
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <nav className="flex flex-col gap-4 pt-8">
@@ -68,9 +70,13 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4">
-                  <Link href="/sign-in" onClick={() => setOpen(false)}>Get Started</Link>
-                </Button>
+                <Link
+                  href="/sign-in"
+                  className={cn(buttonVariants(), "mt-4")}
+                  onClick={() => setOpen(false)}
+                >
+                  Get Started
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
