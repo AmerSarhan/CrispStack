@@ -46,7 +46,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Link
-            href="/sign-in"
+            href="/dashboard"
             className={cn(buttonVariants({ size: "sm" }), "hidden sm:inline-flex")}
           >
             Get Started
@@ -71,7 +71,7 @@ export function Navbar() {
                   </Link>
                 ))}
                 <Link
-                  href="/sign-in"
+                  href="/dashboard"
                   className={cn(buttonVariants(), "mt-4")}
                   onClick={() => setOpen(false)}
                 >

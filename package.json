@@ -1,7 +1,12 @@
 {
-  "name": "osource",
-  "version": "0.1.0",
-  "private": true,
+  "name": "crispstack",
+  "version": "1.0.0",
+  "description": "The anti-vibe-coded Next.js starter. Production-grade, visually polished, zero bloat.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmerSarhan/CrispStack.git"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -37,7 +37,7 @@ export function Hero() {
             so you can focus on what makes your app unique.
           </p>
           <div className="animate-fade-up delay-300 mt-10 flex items-center justify-center gap-4">
-            <Link href="/sign-up" className={cn(buttonVariants({ size: "lg" }), "transition-transform active:scale-[0.98]")}>
+            <Link href="/dashboard" className={cn(buttonVariants({ size: "lg" }), "transition-transform active:scale-[0.98]")}>
               Get Started
             </Link>
             <Link
