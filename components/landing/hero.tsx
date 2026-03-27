@@ -22,29 +22,29 @@ export function Hero() {
 
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="mb-6 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm text-muted-foreground">
+          <div className="animate-fade-up mb-6 inline-flex items-center rounded-full border border-border/60 bg-muted/50 px-4 py-1.5 text-sm text-muted-foreground">
             The anti-vibe-coded starter
           </div>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="animate-fade-up delay-100 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Ship beautiful apps,{" "}
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               not ugly prototypes
             </span>
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+          <p className="animate-fade-up delay-200 mt-6 text-lg leading-relaxed text-muted-foreground">
             A Next.js starter that prioritizes design quality over feature count.
             Two polished themes, bulletproof SEO, and production-grade defaults
             so you can focus on what makes your app unique.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <Link href="/sign-up" className={cn(buttonVariants({ size: "lg" }))}>
+          <div className="animate-fade-up delay-300 mt-10 flex items-center justify-center gap-4">
+            <Link href="/sign-up" className={cn(buttonVariants({ size: "lg" }), "transition-transform active:scale-[0.98]")}>
               Get Started
             </Link>
             <Link
               href={siteConfig.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "transition-transform active:scale-[0.98]")}
             >
               <GitHubIcon className="mr-2" />
               View on GitHub

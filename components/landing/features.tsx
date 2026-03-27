@@ -74,18 +74,18 @@ export function Features() {
     <section id="features" className="py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="animate-fade-up text-3xl font-bold tracking-tight sm:text-4xl">
             Everything you need, nothing you don&apos;t
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="animate-fade-up delay-100 mt-4 text-lg text-muted-foreground">
             Intentionally minimal. Every feature earns its place.
           </p>
         </div>
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <Card key={feature.title} className="border-border/50 bg-card/50 transition-colors hover:bg-card">
+          {features.map((feature, i) => (
+            <Card key={feature.title} className={`animate-fade-up delay-${(i + 2) * 100} hover-lift border-border/50 bg-card/50 transition-colors hover:bg-card`}>
               <CardHeader>
-                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 transition-transform group-hover:scale-110">
                   <feature.icon className="h-5 w-5 text-primary" />
                 </div>
                 <CardTitle className="text-lg">{feature.title}</CardTitle>

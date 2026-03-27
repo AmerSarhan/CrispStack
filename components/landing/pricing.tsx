@@ -50,19 +50,19 @@ export function Pricing() {
     <section id="pricing" className="py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="animate-fade-up text-3xl font-bold tracking-tight sm:text-4xl">
             Simple, transparent pricing
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="animate-fade-up delay-100 mt-4 text-lg text-muted-foreground">
             Choose the plan that fits your needs. Upgrade or downgrade at any time.
           </p>
         </div>
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
-          {plans.map((plan) => (
+          {plans.map((plan, i) => (
             <Card
               key={plan.name}
               className={cn(
-                "relative flex flex-col border-border/50",
+                `animate-fade-up delay-${(i + 2) * 100} hover-lift relative flex flex-col overflow-visible border-border/50`,
                 plan.highlighted && "border-primary shadow-lg shadow-primary/10"
               )}
             >
@@ -92,7 +92,7 @@ export function Pricing() {
                   href={plan.href}
                   className={cn(
                     buttonVariants({ variant: plan.highlighted ? "default" : "outline" }),
-                    "mt-8 w-full"
+                    "mt-8 w-full transition-transform active:scale-[0.98]"
                   )}
                 >
                   {plan.cta}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
 import { ThemeProvider } from "@/components/theme-provider"
 import { JsonLd } from "@/components/seo/json-ld"
 import { createMetadata } from "@/lib/seo"
@@ -20,15 +21,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <JsonLd />
-          {children}
-        </ThemeProvider>
+        <ClerkProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <JsonLd />
+            {children}
+          </ThemeProvider>
+        </ClerkProvider>
       </body>
     </html>
   )

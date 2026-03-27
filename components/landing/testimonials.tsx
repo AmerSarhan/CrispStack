@@ -27,16 +27,16 @@ export function Testimonials() {
     <section id="testimonials" className="py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="animate-fade-up text-3xl font-bold tracking-tight sm:text-4xl">
             Loved by developers
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="animate-fade-up delay-100 mt-4 text-lg text-muted-foreground">
             See what others are saying about CrispStack.
           </p>
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="border-border/50 bg-card/50">
+          {testimonials.map((testimonial, i) => (
+            <Card key={testimonial.name} className={`animate-fade-up delay-${(i + 2) * 100} hover-lift border-border/50 bg-card/50`}>
               <CardContent className="pt-6">
                 <blockquote className="text-sm leading-relaxed text-muted-foreground">
                   &ldquo;{testimonial.quote}&rdquo;
